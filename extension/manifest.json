@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Universal Comments",
+    "version": "1.0",
+    "description": "Adds a comment section to any website",
+    "permissions": [
+        "storage"
+    ],
+    "host_permissions": [
+        "<all_urls>",
+        "http://localhost:8087/",
+        "https://comments.vortice.app",
+        "https://www.vortice.app"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "script.js"
+            ],
+            "css": [
+                "style.css"
+            ]
+        }
+    ]
+}

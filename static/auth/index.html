@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign into Universal Comments</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="login-wv-button" accesskey="c4194369-302e-4aff-a36d-f820fba63a38" data-callback="/auth"></div>
+    <script>
+        let params = new URLSearchParams(window.location.search);
+
+        if (params.get("key")) {
+            window.opener.postMessage({ kind: "app_key", key: params.get("key") }, "*");
+            window.close();
+        }
+    </script>
+    <script src="https://www.mathwow.org/dash/wv/vortice.js"></script>
+</body>
+
+</html>
