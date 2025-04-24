@@ -91,8 +91,8 @@ async function run(appKey) {
     });
 
     try {
-        const url = "https://comments.vortice.app/api/" + appKey + "/comments/" +
-            encodeURIComponent(window.location.host + window.location.pathname);
+        initWS(appKey);
+
         if (!appKey) {
             console.log("Not signed in");
             panelChild.innerHTML = "<h1>Please sign in to continue</h1>";
@@ -105,9 +105,8 @@ async function run(appKey) {
                         console.log(event.data);
                         setGlobal("appKey", event.data.key);
                         panelChild.innerHTML = "";
-                        ws = new WebSocket("https://comments.vortice.app/api/" + event.data.key + "/comments/" +
-                            encodeURIComponent(window.location.host + window.location.pathname));
-                        initWS();
+
+                        initWS(event.data.key);
                     }
                 });
             };
@@ -137,7 +136,13 @@ function comment() {
     commentInput.value = "";
 }
 
-function initWS() {
+function initWS(key) {
+    let fullPath = window.location.host + window.location.pathname;
+    if (window.location.host.includes("youtube.com")) {
+        fullPath += window.location.search + window.location.hash;
+    }
+    ws = new WebSocket("https://comments.vortice.app/api/" + key + "/comments/" +
+        encodeURIComponent(fullPath));
     ws.onmessage = function (event) {
         let commen = JSON.parse(event.data);
         console.log("comments: ", commen);
