@@ -114,8 +114,7 @@ async function run(appKey) {
             return;
         }
 
-        ws = new WebSocket(url);
-        initWS();
+        initWS(appKey);
 
 
     } catch (e) {
