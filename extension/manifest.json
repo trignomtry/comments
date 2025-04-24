@@ -8,9 +8,7 @@
     ],
     "host_permissions": [
         "<all_urls>",
-        "http://localhost:8087/",
-        "https://comments.vortice.app",
-        "https://www.vortice.app"
+        "http://localhost:8087/"
     ],
     "content_scripts": [
         {

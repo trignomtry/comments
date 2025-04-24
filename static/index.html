@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Comments - Web-Wide Conversation Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            background-color: #111111;
+            padding: 1rem 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 0 4rem;
+            background: linear-gradient(45deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 2rem 0;
+            color: #fff;
+        }
+
+        .cta {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+            margin: 1rem 0;
+        }
+
+        .cta:hover {
+            transform: translateY(-2px);
+        }
+
+        .features {
+            padding: 4rem 0;
+            background-color: #111;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #222;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        .use-cases {
+            padding: 4rem 0;
+        }
+
+        .highlight {
+            color: #2563eb;
+        }
+
+        footer {
+            background: #111;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <img src="/comments.svg" alt="Universal Comments" class="logo">
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Comment <span class="highlight">Anywhere</span></h1>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #999;">
+                Transform the web into a collaborative space with real-time comments on any page
+            </p>
+            <a href="/" class="cta">Get Started - It's Free</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Why Universal Comments?</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>🚀 Instant Installation</h3>
+                    <p>No website setup required - works everywhere from day one. Just install the extension and start
+                        commenting.</p>
+                </div>
+                <div class="card">
+                    <h3>🌍 Web-Wide Conversations</h3>
+                    <p>Discuss news articles, GitHub repos, documentation, or even memes - all in real-time with other
+                        users.</p>
+                </div>
+                <div class="card">
+                    <h3>🔒 Privacy First</h3>
+                    <p>Anonymous by default. Choose what to share. We never sell your data or track across websites.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="use-cases">
+        <div class="container">
+            <h2>Fun Use Cases</h2>
+            <div class="grid">
+
+                <div class="card">
+                    <h3>🎉 Live Reactions</h3>
+                    <p>Share excitement during product launches, game releases, or live streams in real-time.</p>
+                </div>
+                <div class="card">
+                    <h3>💡 Crowd Research</h3>
+                    <p>Collect and discuss resources with classmates or colleagues directly on research papers.</p>
+                </div>
+                <div class="card">
+                    <h3>😂 Meme Commentary</h3>
+                    <p>Add hilarious commentary to viral content without messy screenshot edits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Universal Comments. All rights reserved.</p>
+            <div style="margin-top: 1rem;">
+                <a href="#" style="color: #666; margin: 0 1rem;">Privacy</a>
+                <a href="#" style="color: #666; margin: 0 1rem;">Terms</a>
+                <a href="#" style="color: #666; margin: 0 1rem;">Twitter</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
