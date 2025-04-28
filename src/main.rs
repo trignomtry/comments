@@ -90,15 +90,16 @@ impl Handler<ServerMessage> for Server {
             }
             ServerMessage::SendComments(url, socket, username) => {
                 let vac = self.sites.entry(url).or_default();
-                vac.sessions.insert(username, socket.clone());
                 let comments = vac
                     .comments
                     .iter()
                     .map(move |c| json!({"text": c.1, "username": c.0}))
                     .collect::<Vec<Value>>();
+                let mut socket_clone = socket.clone();
                 actix::spawn(async move {
-                    let _ = socket.clone().text(json!(comments).to_string()).await;
+                    let _ = socket_clone.text(json!(comments).to_string()).await;
                 });
+                vac.sessions.insert(username, socket);
             }
         }
     }
